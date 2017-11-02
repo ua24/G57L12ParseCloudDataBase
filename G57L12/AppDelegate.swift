@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -15,11 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+		
+		// Initialize Parse.
+		let configuration = ParseClientConfiguration {
+			$0.applicationId = "Je81DX9a3AqALR8nuao3cinD6MmMlYdYJLV1wWGQ"
+			$0.clientKey = "2EUXX5yftiyAT9aTDo6ZRrfEWf38dPS3fZb8eKiV"
+			$0.server = "https://parseapi.back4app.com"
+		}
+		Parse.initialize(with: configuration)
+		
 		// Override point for customization after application launch.
-		let splitViewController = window!.rootViewController as! UISplitViewController
-		let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-		navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-		splitViewController.delegate = self
+//		let splitViewController = window!.rootViewController as! UISplitViewController
+//		let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+//		navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+//		splitViewController.delegate = self
 		return true
 	}
 
