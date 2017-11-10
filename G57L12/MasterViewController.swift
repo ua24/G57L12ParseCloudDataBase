@@ -24,6 +24,9 @@ class MasterViewController: UITableViewController {
 	
 	func fetchData() {
 		let query = PFQuery(className: "Quote")
+//		if enthernetIsOff {
+//		query.fromLocalDatastore()
+//		}
 		query.whereKey("authorName", equalTo: "Dima")
 		query.findObjectsInBackground { (objects, error) in
 			if let realObjects = objects {

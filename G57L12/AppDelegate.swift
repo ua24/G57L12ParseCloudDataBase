@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 			$0.applicationId = "Je81DX9a3AqALR8nuao3cinD6MmMlYdYJLV1wWGQ"
 			$0.clientKey = "2EUXX5yftiyAT9aTDo6ZRrfEWf38dPS3fZb8eKiV"
 			$0.server = "https://parseapi.back4app.com"
+			$0.isLocalDatastoreEnabled = true
 		}
 		Parse.initialize(with: configuration)
 		
